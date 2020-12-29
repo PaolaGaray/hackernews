@@ -1,20 +1,9 @@
 const { ApolloServer } = require('apollo-server');
 
-// 1
-const typeDefs = `
-    type Query {
-        info: String!
-    }
-`
+const typeDefs  = require("./typeDefs");
+const resolvers = require("./resolvers");
 
-// 2
-const resolvers = {
-    Query: {
-        info: () => `This is the API of the Hackernews Clone`
-    }
-}
 
-// 3
 const server = new ApolloServer({
     typeDefs,
     resolvers

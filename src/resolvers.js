@@ -1,0 +1,6 @@
+
+module.exports = {
+    Query: {
+        info: () => `This is the API of the Hackernews Clone`
+    }
+};
