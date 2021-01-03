@@ -1,4 +1,8 @@
+const { PubSub } = require('apollo-server');
+
 const Link = require("./models/Link");
+
+const pubsub = new PubSub();
 
 module.exports = {
     Query: {
@@ -34,6 +38,10 @@ module.exports = {
         deleteLink: async (root, {_id}) => {
             const link = await Link.findByIdAndDelete({'_id': _id});
             return link;
-        }
+        },
+
+        // Subscription: {
+
+        // }
     }
 };

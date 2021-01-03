@@ -15,8 +15,14 @@ module.exports = gql`
     }
 
     type Mutation {
-        createLink(url: String!, description: String!): Link,
-        updateLink(_id: ID!, url: String, description: String): Link,
+        createLink(url: String!, description: String!): Link
+        updateLink(_id: ID!, url: String, description: String): Link
         deleteLink(_id: ID!): Link,
-}
+    }
+
+    type Subscription {
+        linkCreated: Link
+        linkUpdated: Link
+        linkDeleted: Link
+    }
 `;
