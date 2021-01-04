@@ -2,11 +2,19 @@ const { gql } = require("apollo-server");
 
 module.exports = gql`
 
+    type User {
+        _id: ID
+        name: String
+        email: String
+        links: [Link]
+    }
+
     type Link {
         _id: ID
         createdAt: String
         description: String
         url: String
+        postedBy: User
     }
 
     type Query {
@@ -15,7 +23,7 @@ module.exports = gql`
     }
 
     type Mutation {
-        createLink(url: String!, description: String!): Link
+        post(url: String!, description: String!): Link
         updateLink(_id: ID!, url: String, description: String): Link
         deleteLink(_id: ID!): Link,
     }

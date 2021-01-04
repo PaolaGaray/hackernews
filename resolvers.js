@@ -14,7 +14,7 @@ module.exports = {
     },
 
     Mutation: {
-        createLink: async (root, args) => {
+        post: async (root, args) => {
             const newLink = await new Link ({
                 ...args,
             }
@@ -39,9 +39,5 @@ module.exports = {
             const link = await Link.findByIdAndDelete({'_id': _id});
             return link;
         },
-
-        // Subscription: {
-
-        // }
     }
 };

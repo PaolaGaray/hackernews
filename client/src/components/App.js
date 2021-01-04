@@ -1,7 +1,9 @@
 
 import '../styles/App.css';
-import React, { useState } from 'react';
+import React from 'react';
 import { gql, useQuery } from '@apollo/client';
+
+import CreateLink from './CreateLink';
 
 
 const GET_LINKS = gql `
@@ -32,8 +34,10 @@ function App() {
 
   return (
     <div>
-      <h3>All Links</h3>
-        {allLinksHandler()}
+      <CreateLink />
+      {/* <h3>All Links</h3>
+        {allLinksHandler()} */}
+
     </div>
   );
 }
