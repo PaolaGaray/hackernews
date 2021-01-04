@@ -37,6 +37,7 @@ const CreateLink = () => {
                 }}>
                 <div className="flex flex-column mt3">
                     <input
+                        className="mb2"
                         value={formState.description}
                         onChange={(e) =>
                             setFormState({
@@ -48,6 +49,7 @@ const CreateLink = () => {
                         placeholder="A description for the link"
                     />
                     <input
+                        className="mb2"
                         value={formState.url}
                         onChange={(e) =>
                             setFormState({
